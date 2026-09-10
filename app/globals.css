@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #092c42;
+
+  /* VisionCore brand tokens */
+  --vc-navy: #092c42;
+  --vc-orange: #fc4c00;
+  --vc-white: #ffffff;
+
+  --vc-navy-05: rgba(9, 44, 66, 0.05);
+  --vc-navy-08: rgba(9, 44, 66, 0.08);
+  --vc-navy-12: rgba(9, 44, 66, 0.12);
+  --vc-navy-40: rgba(9, 44, 66, 0.4);
+  --vc-navy-70: rgba(9, 44, 66, 0.7);
+
+  --vc-orange-08: rgba(252, 76, 0, 0.08);
+  --vc-orange-12: rgba(252, 76, 0, 0.12);
+  --vc-orange-20: rgba(252, 76, 0, 0.2);
+  --vc-orange-35: rgba(252, 76, 0, 0.35);
+
+  --vc-gradient-primary: linear-gradient(90deg, #fc4c00 0%, #092c42 100%);
+  --vc-gradient-secondary: linear-gradient(90deg, #092c42 0%, #fc4c00 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-vc-navy: var(--vc-navy);
+  --color-vc-orange: var(--vc-orange);
+  --color-vc-white: var(--vc-white);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.vc-gradient-text {
+  background: var(--vc-gradient-primary);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vc-gradient-text-animated {
+    animation: vc-gradient-shift 6s ease-in-out infinite;
+  }
+}
+
+@keyframes vc-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.vc-dot-navy {
+  background-color: var(--vc-navy);
+}
+.vc-dot-orange {
+  background-color: var(--vc-orange);
+}
