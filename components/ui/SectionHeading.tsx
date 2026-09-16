@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function SectionHeading({
   eyebrow,
   title,
@@ -22,13 +26,17 @@ export default function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className={`text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight ${
           dark ? "text-white" : "text-[#092C42]"
         }`}
       >
         {title}
-      </h2>
+      </motion.h2>
       {description && (
         <p
           className={`mt-4 text-base leading-relaxed ${

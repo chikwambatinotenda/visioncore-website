@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import PageHero from "@/components/ui/PageHero";
+import ContactForm from "@/components/ui/ContactForm";
+
+export const metadata: Metadata = { title: "Contact", description: "Tell VisionCore Technologies what you are trying to build, improve or grow." };
+
+export default function ContactPage() { return <><PageHero eyebrow="CONTACT VISIONCORE" title="LET'S BUILD WHAT'S NEXT." description="Tell us what you're trying to build, improve or grow." /><section className="bg-white py-20"><div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr]"><div><h2 className="text-2xl font-extrabold text-[#092C42]">START A CONVERSATION.</h2><p className="mt-4 max-w-sm text-sm leading-relaxed text-[#092C42]/65">Share a little about your business and what you need. We will use it to understand the right next step.</p><div className="mt-10 space-y-5 text-sm text-[#092C42]/75"><p><span className="block text-xs font-semibold tracking-[0.15em] text-[#FC4C00]">EMAIL</span><a href="mailto:contact@visioncoretech.com" className="mt-1 block hover:text-[#FC4C00]">contact@visioncoretech.com</a></p><p><span className="block text-xs font-semibold tracking-[0.15em] text-[#FC4C00]">LOCATION</span><span className="mt-1 block">Harare, Zimbabwe</span></p><p><span className="block text-xs font-semibold tracking-[0.15em] text-[#FC4C00]">WHATSAPP</span><a href="https://wa.me/" className="mt-1 block hover:text-[#FC4C00]">Start a conversation</a></p></div></div><ContactForm /></div></section></>; }

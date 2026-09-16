@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import PageHero from "@/components/ui/PageHero";
+import CTAButton from "@/components/ui/CTAButton";
+
+export const metadata: Metadata = { title: "Careers", description: "Build the future with VisionCore Technologies." };
+
+export default function CareersPage() { return <><PageHero eyebrow="CAREERS" title="BUILD THE FUTURE WITH US." description="VisionCore is building a technology company around software engineering, digital transformation, cloud, infrastructure, creative technology and digital growth." /><section className="bg-white py-20"><div className="mx-auto max-w-4xl px-6"><div className="border-t border-[#092C42]/10 pt-6"><h2 className="text-2xl font-extrabold text-[#092C42]">NO CURRENT OPENINGS</h2><p className="mt-4 max-w-xl text-sm leading-relaxed text-[#092C42]/65">We&apos;re always interested in meeting talented people who want to build meaningful technology. Send us a general application and tell us where you could contribute.</p><div className="mt-7"><CTAButton href="mailto:careers@visioncoretech.com">GENERAL APPLICATION</CTAButton></div></div><div className="mt-16 grid gap-6 sm:grid-cols-2">{["Software engineering", "Digital transformation", "Cloud & infrastructure", "Creative technology"].map((area) => <div key={area} className="border-t border-[#092C42]/10 pt-5 text-sm font-semibold text-[#092C42]">{area}</div>)}</div></div></section></>; }

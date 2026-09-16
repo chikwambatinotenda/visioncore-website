@@ -24,6 +24,18 @@
   --vc-gradient-secondary: linear-gradient(90deg, #092c42 0%, #fc4c00 100%);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -79,4 +91,15 @@ body {
 }
 .vc-dot-orange {
   background-color: var(--vc-orange);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

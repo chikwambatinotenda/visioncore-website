@@ -14,11 +14,11 @@ type LinkProps = BaseProps &
   AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
 const base =
-  "group inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-250 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FC4C00]";
+  "group inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-250 ease-out active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FC4C00]";
 
 const variants: Record<string, string> = {
   primary:
-    "bg-[#FC4C00] text-white hover:bg-[#e34400] shadow-[0_0_0_0_rgba(252,76,0,0)] hover:shadow-[0_8px_24px_-8px_rgba(252,76,0,0.5)]",
+    "rounded-full bg-[#FF5722] text-white font-bold duration-300 hover:bg-[#FF5722]/90 shadow-[0_0_0_0_rgba(255,87,34,0)] hover:shadow-[0_8px_24px_-8px_rgba(255,87,34,0.5)]",
   secondary:
     "border border-[#092C42]/20 text-[#092C42] hover:border-[#FC4C00] hover:text-[#FC4C00]",
   ghost: "text-white/90 hover:text-white",

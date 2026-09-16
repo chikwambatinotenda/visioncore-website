@@ -3,6 +3,8 @@ export type CaseStudy = {
   title: string;
   category: string;
   summary: string;
+  badges?: string[];
+  image?: string;
   challenge: string;
   approach: string;
   solution: string;
@@ -10,6 +12,18 @@ export type CaseStudy = {
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "sky-house-finishing",
+    title: "Sky House Finishing — Full Digital Launch",
+    category: "360° Digital Transformation",
+    summary: "360° execution from scratch: Created brand identity, custom website, Google Business Profile, local SEO ranking, and managed hosting support.",
+    badges: ["Brand & Identity", "Web & Cloud Hosting", "SEO & Google Profile"],
+    image: "/Portfolio/SkyHouse/skyhouse-desktop-web.png",
+    challenge: "Sky House Finishing needed a credible digital foundation from the ground up.",
+    approach: "VisionCore connected brand, web, infrastructure and local visibility into one coordinated launch.",
+    solution: "A complete digital presence spanning identity, website, Google Business Profile, local SEO and managed hosting support.",
+    result: "A clear, discoverable and professionally presented digital home for the business.",
+  },
   {
     slug: "corporate-website-relaunch",
     title: "Corporate Website Relaunch",
