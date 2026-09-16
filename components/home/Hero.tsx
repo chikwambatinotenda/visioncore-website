@@ -16,7 +16,7 @@ const dashboardViews = [
 
 const reveal = {
   hidden: { opacity: 0, y: 20 },
-  visible: (delay: number) => ({ opacity: 1, y: 0, transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] } }),
+  visible: (delay: number) => ({ opacity: 1, y: 0, transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] as const } }),
 };
 
 export default function Hero() {
@@ -48,7 +48,7 @@ export default function Hero() {
           <motion.div custom={0.3} initial="hidden" animate="visible" variants={reveal} className="mt-6 flex flex-wrap gap-4"><CTAButton href="/contact">START A PROJECT</CTAButton><CTAButton href="/services" variant="secondary">EXPLORE SERVICES</CTAButton></motion.div>
         </div>
 
-        <motion.div initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.94, y: 24 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.18, ease: [0.22, 1, 0.36, 1] }} className="relative mx-auto w-full max-w-xl px-2 pb-10 sm:px-8">
+        <motion.div initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.94, y: 24 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.18, ease: [0.22, 1, 0.36, 1] as const }} className="relative mx-auto w-full max-w-xl px-2 pb-10 sm:px-8">
           <DotNetwork className="scale-125 opacity-60" variant="dense" />
           <div className="relative rounded-2xl border border-[#092C42]/15 bg-[#092C42]/[0.06] p-2 shadow-[0_35px_80px_-35px_rgba(9,44,66,0.5)] backdrop-blur-xl">
             <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0A192F] shadow-2xl">
