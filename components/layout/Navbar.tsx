@@ -39,9 +39,9 @@ export default function Navbar() {
           <Image
             src="/assets/logo-horizontal.png"
             alt="VisionCore Technologies"
-            width={220}
-            height={48}
-            className="h-12 w-auto sm:h-14"
+            width={240}
+            height={80}
+            className="h-14 w-auto object-contain md:h-16"
             priority
           />
         </Link>
@@ -94,9 +94,6 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-          <Link href="/sign-in" className="text-sm font-medium text-[#092C42] hover:text-[#FC4C00] transition-colors">
-            SIGN IN
-          </Link>
           <CTAButton href="/contact" className="px-5 py-2.5 text-xs">
             START A PROJECT
           </CTAButton>
@@ -130,9 +127,6 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/sign-in" className={`flex min-h-11 items-center rounded-md px-2 py-3 text-sm transition-colors ${pathname === "/sign-in" ? "font-bold text-[#FF5722]" : "font-medium text-[#0A192F] hover:text-[#FF5722]"}`}>
-              SIGN IN
-            </Link>
             <div className="mt-2">
               <CTAButton href="/contact" className="w-full">
                 START A PROJECT

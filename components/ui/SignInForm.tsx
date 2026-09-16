@@ -1,8 +1,21 @@
 "use client";
 
+import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
+
 export default function SignInForm() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setLoading(true);
+    window.localStorage.setItem("visioncore-auth", "true");
+    window.setTimeout(() => router.push("/dashboard"), 400);
+  }
+
   return (
-    <form className="mt-8 space-y-5" onSubmit={(event) => event.preventDefault()}>
+    <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
       <label className="block text-sm font-medium text-[#092C42]">
         Email
         <input
@@ -23,9 +36,10 @@ export default function SignInForm() {
       </label>
       <button
         type="submit"
-        className="w-full rounded-md bg-[#FC4C00] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#e34400]"
+        disabled={loading}
+        className="min-h-11 w-full rounded-full bg-[#FF4D15] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#E03E0A] disabled:opacity-70"
       >
-        SIGN IN
+        {loading ? "SIGNING IN..." : "SIGN IN"}
       </button>
     </form>
   );

@@ -1,7 +1,22 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/ui/PageHero";
-import CTAButton from "@/components/ui/CTAButton";
+import TalentNetworkForm from "@/components/careers/TalentNetworkForm";
 
-export const metadata: Metadata = { title: "Careers", description: "Build the future with VisionCore Technologies." };
+export const metadata: Metadata = {
+  title: "Careers",
+  description: "Build the future with VisionCore Technologies and join our growing talent network.",
+};
 
-export default function CareersPage() { return <><PageHero eyebrow="CAREERS" title="BUILD THE FUTURE WITH US." description="VisionCore is building a technology company around software engineering, digital transformation, cloud, infrastructure, creative technology and digital growth." /><section className="bg-white py-20"><div className="mx-auto max-w-4xl px-6"><div className="border-t border-[#092C42]/10 pt-6"><h2 className="text-2xl font-extrabold text-[#092C42]">NO CURRENT OPENINGS</h2><p className="mt-4 max-w-xl text-sm leading-relaxed text-[#092C42]/65">We&apos;re always interested in meeting talented people who want to build meaningful technology. Send us a general application and tell us where you could contribute.</p><div className="mt-7"><CTAButton href="mailto:careers@visioncoretech.com">GENERAL APPLICATION</CTAButton></div></div><div className="mt-16 grid gap-6 sm:grid-cols-2">{["Software engineering", "Digital transformation", "Cloud & infrastructure", "Creative technology"].map((area) => <div key={area} className="border-t border-[#092C42]/10 pt-5 text-sm font-semibold text-[#092C42]">{area}</div>)}</div></div></section></>; }
+export default function CareersPage() {
+  return (
+    <>
+      <section className="relative overflow-hidden bg-white py-8 md:py-12">
+        <div className="relative mx-auto max-w-7xl px-6"><span className="text-xs font-bold uppercase tracking-widest text-[#FF5722]">CAREERS</span><h1 className="mt-2 text-3xl font-extrabold tracking-tight text-[#0A192F] md:text-5xl">BUILD THE FUTURE WITH US.</h1><p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">VisionCore is building a technology company around software engineering, digital transformation, cloud, infrastructure, creative technology and digital growth.</p></div>
+      </section>
+      <section className="bg-white pb-16 pt-2">
+        <div className="mx-auto max-w-7xl px-6">
+          <TalentNetworkForm />
+        </div>
+      </section>
+    </>
+  );
+}

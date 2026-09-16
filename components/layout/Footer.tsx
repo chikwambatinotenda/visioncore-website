@@ -21,7 +21,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="grid w-full grid-cols-1 justify-between gap-8 py-14 sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid w-full grid-cols-1 justify-between gap-8 py-14 sm:grid-cols-2 md:grid-cols-3">
           <div>
             <h3 className="text-xs font-semibold tracking-[0.2em] text-white/50">SERVICES</h3>
             <ul className="mt-4 space-y-3 text-sm">
@@ -42,14 +42,6 @@ export default function Footer() {
               <li><Link href="/portfolio" className="text-white/80 transition-colors hover:text-[#FF5722]">Work</Link></li>
               <li><Link href="/careers" className="text-white/80 transition-colors hover:text-[#FF5722]">Careers</Link></li>
               <li><Link href="/contact" className="text-white/80 transition-colors hover:text-[#FF5722]">Contact</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-semibold tracking-[0.2em] text-white/50">CLIENT</h3>
-            <ul className="mt-4 space-y-3 text-sm">
-              <li><Link href="/sign-in" className="text-white/80 transition-colors hover:text-[#FF5722]">Sign In</Link></li>
-              <li><Link href="/contact" className="text-white/80 transition-colors hover:text-[#FF5722]">Start a Project</Link></li>
             </ul>
           </div>
 

@@ -8,14 +8,14 @@ export default function ProcessStep({
   description: string;
 }) {
   return (
-    <div className="group cursor-pointer rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FF5722]/40 hover:shadow-xl md:p-8">
+    <div className="group rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-md md:p-6">
       <div className="mb-3 flex items-center gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FF5722] text-sm font-extrabold text-white shadow-md shadow-[#FF5722]/25">
+        <div className="shrink-0 rounded-md border border-orange-100 bg-orange-50 px-2.5 py-1 text-xs font-bold text-orange-600">
           {number}
         </div>
-        <h3 className="text-lg font-bold text-slate-900 transition-colors group-hover:text-[#FF5722] md:text-xl">{name}</h3>
+        <h3 className="text-base font-bold leading-tight text-gray-900 transition-colors group-hover:text-[#FF5722] md:text-lg">{name}</h3>
       </div>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">{description}</p>
+      <p className="text-xs leading-relaxed text-gray-500 md:text-sm">{description}</p>
     </div>
   );
 }

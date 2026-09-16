@@ -9,17 +9,22 @@ import CTAButton from "@/components/ui/CTAButton";
 
 function ProjectCard({ project, onOpen }: { project: Project; onOpen: (project: Project) => void }) {
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="flex aspect-[16/10] w-full items-center justify-center overflow-hidden bg-slate-100 p-3">
-        <Image src={project.image} alt={project.title} width={1200} height={750} className="h-full w-full rounded-lg object-contain shadow-sm transition-transform duration-500 ease-out group-hover:scale-105" />
+    <div className="group grid w-full grid-cols-1 items-center gap-8 rounded-2xl border border-gray-200/80 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-6 lg:col-span-12 lg:grid-cols-12 lg:gap-12 lg:p-8">
+      <div className="lg:col-span-7">
+        <div className="overflow-hidden rounded-2xl border border-gray-200/80 bg-gray-50 shadow-xl">
+          <div className="flex items-center gap-1.5 border-b border-gray-200/80 bg-gray-100 px-4 py-3"><span className="h-2.5 w-2.5 rounded-full bg-[#FF5722]" /><span className="h-2.5 w-2.5 rounded-full bg-[#0A192F]/20" /><span className="h-2.5 w-2.5 rounded-full bg-[#0A192F]/20" /><span className="ml-3 h-5 flex-1 rounded-md bg-white/80" /></div>
+          <div className="flex aspect-[16/10] w-full items-center justify-center bg-slate-100 p-3 sm:p-5">
+            <Image src={project.image} alt={project.title} width={1600} height={1000} className="h-full w-full rounded-xl object-contain shadow-sm transition-transform duration-500 ease-out group-hover:scale-[1.02]" />
+          </div>
+        </div>
       </div>
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-col justify-between gap-4 lg:col-span-5">
         <div>
           <div className="mb-3 flex flex-wrap gap-2">{project.badges.map((badge) => <span key={badge} className="rounded-full border border-orange-100 bg-orange-50 px-3 py-1 text-xs font-semibold text-[#FF5722]">{badge}</span>)}</div>
-          <h3 className="mb-2 text-2xl font-bold text-[#0A192F]">Sky House Finishing - Full Digital Launch</h3>
-          <p className="mb-4 text-sm leading-relaxed text-slate-600">360° execution from scratch: brand identity, custom web platform, Google Business Profile, local SEO, and managed hosting support.</p>
+          <h3 className="text-3xl font-bold tracking-tight text-gray-900">Sky House Finishing - Full Digital Launch</h3>
+          <p className="mt-4 text-gray-600 leading-relaxed">360° execution from scratch: brand identity, custom web platform, Google Business Profile, local SEO, and managed hosting support.</p>
         </div>
-        <div className="mt-auto flex items-center gap-4 border-t border-slate-100 pt-4">
+        <div className="mt-6 flex flex-wrap items-center gap-4">
           <button type="button" onClick={() => onOpen(project)} className="rounded-xl bg-[#0A192F] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800">View Case Study →</button>
           <a href="https://www.skyhousefinishing.co.zw" target="_blank" rel="noopener noreferrer" className="rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">Visit Live Site ↗</a>
         </div>
@@ -68,7 +73,7 @@ export default function PortfolioSection({ showHeader = true }: { showHeader?: b
     <section className={`bg-white ${showHeader ? "py-24" : "pb-24 pt-0"}`}>
       <div className="mx-auto max-w-7xl px-6">
         {showHeader && <Reveal><div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end"><div><p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5722]">Selected Work</p><h2 className="text-3xl font-extrabold tracking-tight text-[#092C42] sm:text-4xl">PROOF IN PRACTICE.</h2></div><CTAButton href="/portfolio" variant="secondary">VIEW OUR WORK</CTAButton></div></Reveal>}
-        <div className={`${showHeader ? "mt-14" : "mt-0"} grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3`}>{projects.filter((project) => project.slug === "sky-house-finishing").map((project) => <Reveal key={project.slug}><ProjectCard project={project} onOpen={setSelectedProject} /></Reveal>)}</div>
+        <div className={`${showHeader ? "mt-14" : "mt-0"} grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12`}>{projects.filter((project) => project.slug === "sky-house-finishing").map((project) => <Reveal key={project.slug} className="lg:col-span-12"><ProjectCard project={project} onOpen={setSelectedProject} /></Reveal>)}</div>
       </div>
       {selectedProject && <CaseStudyDrawer project={selectedProject} onClose={() => setSelectedProject(null)} />}
     </section>
